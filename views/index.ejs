@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Message Board</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+     <div style="display: flex; flex-direction: column; align-items: center; margin-top: 40px;">
+        <a href="/new" style="margin-bottom: 10px;">Add new message Here</a>
+        <% messages.forEach( message => { %>
+            <div style="border: 1px solid #000; padding: 3px; margin-bottom: 10px; width: 600px; text-align: left;">
+                <h4><%= message.user %>: <span style="color: gray; font-size: 0.8rem;"> <%= message.text %></span></h4>
+                <small><%= new Date(message.added).toLocaleString("en-US", {day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit"}) %></small>
+            </div>
+        <% }) %>
+     </div>
+</body>
+
+</html>
