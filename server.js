@@ -3,7 +3,7 @@ const app = express();
 const dotenv = require("dotenv")
 const path = require("path");
 dotenv.config();
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3000;
 const  indexRoute = require("./routes/indexRoute");
 const newMessageRoute = require("./routes/newMessageRoute")
 
